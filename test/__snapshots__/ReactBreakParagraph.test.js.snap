@@ -1,0 +1,359 @@
+exports[`react-break-paragraph shoud render 1`] = `
+<div
+  style={
+    Object {
+      "padding": 0,
+      "position": "relative",
+      "width": "100%",
+    }
+  }>
+  <div
+    style={
+      Object {
+        "opacity": 0,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }>
+    <h1
+      className="placeholder">
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        This 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        is 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        a 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        very 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        long 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        text. 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        This 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        is 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        a 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        very 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        long 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        text. 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        This 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        is 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        a 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        very 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        long 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        text. 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        This 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        is 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        a 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        very 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        long 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        text. 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        This 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        is 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        a 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        very 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        long 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        text. 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        This 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        is 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        a 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        very 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        long 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        text. 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        This 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        is 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        a 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        very 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        long 
+      </span>
+      <span
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }>
+        text. 
+      </span>
+    </h1>
+  </div>
+</div>
+`;
