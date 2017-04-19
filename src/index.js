@@ -39,9 +39,9 @@ loadTracks(store);
 
 const history = syncHistoryWithStore(hashHistory, store);
 
-hashHistory.listen((location) => {
-  window.scrollTo(0, 0);
-});
+// hashHistory.listen((location) => {
+//   window.scrollTo(0, 0);
+// });
 
 ReactDOM.render(
   <Provider store={store}>
