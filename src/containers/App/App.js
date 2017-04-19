@@ -11,6 +11,7 @@ import { Fixed } from 'theme/grid';
 import { backgroundColor, color2 } from 'theme/variables';
 import media from 'theme/media';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
+import SmoothScroll from 'components/SmoothScroll/SmoothScroll';
 
 const Body = styled.div`
   // background-color: ${color1};
@@ -62,22 +63,24 @@ class App extends Component {
   render() {
     const { loading } = this.state;
     return (
-      <Body>
-        <Hamburger/>
-        <Fixed bottom="60px" left="40px" hideInTablet>
-          <ThemeProvider theme={{ color: color2 }}>
-            <SocialMedia/>
-          </ThemeProvider>
-        </Fixed>
-        <Menu/>
-        <Background/>
-        <LoadingPage loading={loading}/>
-        <TransitionGroup>
-          {React.cloneElement(this.props.children, { key: this.props.location.pathname })}
-        </TransitionGroup>
-        <PreviousArrow/>
-        <NextArrow/>
-      </Body>
+      <SmoothScroll>
+        <Body>
+          <Hamburger/>
+          <Fixed bottom="60px" left="40px" hideInTablet>
+            <ThemeProvider theme={{ color: color2 }}>
+              <SocialMedia/>
+            </ThemeProvider>
+          </Fixed>
+          <Menu/>
+          <Background/>
+          <LoadingPage loading={loading}/>
+          <TransitionGroup>
+            {React.cloneElement(this.props.children, { key: this.props.location.pathname })}
+          </TransitionGroup>
+          <PreviousArrow/>
+          <NextArrow/>
+        </Body>
+      </SmoothScroll>
     );
   }
 }

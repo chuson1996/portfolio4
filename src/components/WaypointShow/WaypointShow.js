@@ -27,7 +27,7 @@ export default class WaypointShow extends Component {
     if (onLeave) {
       onLeave();
     }
-    this.setState({ show: false });
+    // this.setState({ show: false });
   };
 
   render() {

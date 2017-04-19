@@ -19,7 +19,7 @@ import {
   StyledImage8Bit,
   StyledImageBefore8Bit,
   StyledFoldImage,
-} from './styles';
+} from './Projects.style';
 import { Motion, spring } from 'react-motion';
 import ImageParallax from 'react-image-parallax';
 import CssToMatrix from 'css-to-matrix';
@@ -139,7 +139,7 @@ class Projects extends Component {
                       <Div>0</Div>
                       <Div>2</Div>
                     </OrderNumber>
-                    <InstallCode right hide={!show}>npm install --save <A href="https://github.com/chuson1996/react-image-parallax">react-image-parallax</A></InstallCode>
+                    <InstallCode right hide={!show}>npm install --save <A target="_blank" href="https://github.com/chuson1996/react-image-parallax">react-image-parallax</A></InstallCode>
                   </Relative>
                   <Flex justifyContent="flex-start" marginBottom="70px">
                     <Relative>

@@ -18,7 +18,7 @@ export const FixedTitle = styled.h1`
 `;
 
 export const OrderNumber = styled.h1`
-  font-size: 5em;
+  font-size: 7em;
   color: ${color5};
   opacity: 0.4;
   margin-top: 20px;
