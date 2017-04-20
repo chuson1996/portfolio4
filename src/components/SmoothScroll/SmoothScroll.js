@@ -5,6 +5,9 @@ import { hashHistory } from 'react-router';
 class ManualScroll extends Component{
   componentWillReceiveProps(nextProps) {
     window.scrollTo(0, Math.round(nextProps.scrollY));
+    // window.requestAnimationFrame(() => {
+    //   // console.log('Scroll');
+    // });
   }
 
   render() {
@@ -21,10 +24,9 @@ export default class SmoothScroll2 extends Component {
 
 
     this.onmousewheel = this.onmousewheel.bind(this);
+    this.onkeydown = this.onkeydown.bind(this);
     this.ontouchstart = this.ontouchstart.bind(this);
     this.ontouchmove = this.ontouchmove.bind(this);
-    this.onkeydown = this.onkeydown.bind(this);
-    this.onkeyup = this.onkeyup.bind(this);
   }
 
   componentDidMount() {
@@ -32,7 +34,8 @@ export default class SmoothScroll2 extends Component {
 
     window.addEventListener('wheel', this.onmousewheel);
     window.addEventListener('keydown', this.onkeydown);
-    window.addEventListener('keydown', this.onkeyup);
+    // window.addEventListener('touchmove', this.ontouchmove);
+    // window.addEventListener('touchstart', this.ontouchstart);
 
     hashHistory.listen(() => {
       window.scrollTo(0, 0);
@@ -40,14 +43,11 @@ export default class SmoothScroll2 extends Component {
         scrollY: 0
       });
     });
-    // window.addEventListener('touchmove', this.ontouchmove);
-    // window.addEventListener('touchstart', this.ontouchstart);
   }
 
   componentWillUnmount() {
     window.removeEventListener('wheel', this.onmousewheel);
     window.removeEventListener('keydown', this.onkeydown);
-    window.removeEventListener('keydown', this.onkeyup);
     // window.removeEventListener('touchmove', this.ontouchmove);
     // window.removeEventListener('touchstart', this.ontouchstart);
   }
@@ -73,18 +73,14 @@ export default class SmoothScroll2 extends Component {
     if (e.target === document.body && e.key === 'ArrowDown') {
       e.preventDefault();
       this.move(20);
-    }
-  }
-
-  onkeyup(e) {
-    if (e.target === document.body && e.key === 'ArrowUp') {
+    } else if (e.target === document.body && e.key === 'ArrowUp') {
       e.preventDefault();
       this.move(-20);
     }
   }
 
   onmousewheel(e) {
-    if (this.container.contains(e.target) || e.target === this.container) {
+    if (document.body.contains(e.target) || e.target === document.body) {
       e.preventDefault();
       this.move(e.deltaY);
     }
@@ -95,10 +91,13 @@ export default class SmoothScroll2 extends Component {
   }
 
   ontouchmove(e) {
+    // Not working right now
     if (this.container.contains(e.target) || e.target === this.container) {
+      console.log(e);
       e.preventDefault();
       const deltaY = this.pinY - e.layerY;
-      this.move(deltaY * 2);
+      // this.move(deltaY * 2);
+      console.log(deltaY);
     }
     this.pinY = e.layerY;
   }

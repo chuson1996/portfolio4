@@ -12,6 +12,8 @@ import { backgroundColor, color2 } from 'theme/variables';
 import media from 'theme/media';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 import SmoothScroll from 'components/SmoothScroll/SmoothScroll';
+import NavMenu from 'components/NavMenu/NavMenu';
+import { Tablet, NonTablet } from 'components/Media/Media';
 
 const Body = styled.div`
   // background-color: ${color1};
@@ -65,7 +67,12 @@ class App extends Component {
     return (
       <SmoothScroll>
         <Body>
-          <Hamburger/>
+          <Tablet>
+            <Hamburger/>
+          </Tablet>
+          <NonTablet>
+            <NavMenu/>
+          </NonTablet>
           <Fixed bottom="60px" left="40px" hideInTablet>
             <ThemeProvider theme={{ color: color2 }}>
               <SocialMedia/>

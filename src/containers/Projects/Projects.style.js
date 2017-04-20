@@ -33,6 +33,10 @@ export const OrderNumber = styled(_OrderNumber)`
 export const InstallCode = styled.p`
   position: absolute;
   top: 50%;
+  font-size: 1.7em;
+  ${media.tablet`
+    font-size: 1em;
+  `}
   ${({ right }) => right ? css`
     right: 0;
     margin: 0 0 0 0;
