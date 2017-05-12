@@ -7,11 +7,11 @@ export const normalFontSize = '24px';
    2: Menu background + Social Media + RightP
    3: Fixed Title + Underline */
 
-export const color1 = '#424242';
+export const color1 = '#424242'; // Charcoal
 export const color4 = 'white';
-export const color3 = 'rgba(242, 95, 92, 1)';
-export const color5 = 'rgb(253, 238, 108)';
-export const color2 = 'rgba(36, 123, 160, 1)';
+export const color3 = 'rgba(242, 95, 92, 1)'; // Dark Orange
+export const color5 = 'rgb(253, 238, 108)'; // Light Yellow
+export const color2 = 'rgba(36, 123, 160, 1)'; // Blueish
 
 export const menuBackground = color1;
 export const menuTextColor = color5;

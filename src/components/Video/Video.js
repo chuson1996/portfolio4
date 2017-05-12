@@ -55,17 +55,27 @@ class Video extends Component {
       hover: false,
       moveDown: 0,
       moveLeft: 0,
+      moveVideoLeft: 0,
       expandWidth: 1,
       expandHeight: 1,
       cursorPosition: {
         top: 0,
         left: 0
-      }
+      },
+      maxVideoSize: 100
     };
   }
 
   toggleZoom = () => {
     const { zoom } = this.state;
+    const { clientHeight, clientWidth } = this.player.player.player;
+    const videoRatio = clientWidth / clientHeight;
+    const windowRatio = window.innerWidth / window.innerHeight;
+    
+    const maxVideoSize = videoRatio > windowRatio ? (videoRatio / windowRatio * 100) : 100;
+    this.setState({
+      maxVideoSize
+    });
 
     // When the video is zoom. Disable scrolling
     if (zoom) {
@@ -76,7 +86,12 @@ class Video extends Component {
     }
 
     const moveDown = -this.container.getBoundingClientRect().top;
-    const moveLeft = -this.container.getBoundingClientRect().left;
+    let moveLeft = -this.container.getBoundingClientRect().left;
+    if (maxVideoSize > 100) {
+      this.setState({
+        moveVideoLeft: -(maxVideoSize/ 100 - 1) / 2 * window.innerWidth
+      });
+    }
     const expandWidth = window.innerWidth / this.container.offsetWidth;
     const expandHeight = window.innerHeight / this.container.offsetHeight;
 
@@ -112,13 +127,16 @@ class Video extends Component {
 
   render() {
     const { videoUrl, playing } = this.props;
-    const { zoom, hover, cursorPosition, moveDown, moveLeft, expandWidth, expandHeight } = this.state;
+    const { zoom, hover, cursorPosition, moveDown, moveLeft, expandWidth, expandHeight, maxVideoSize, moveVideoLeft } = this.state;
+    
     const motionStyle = zoom ? {
-      videoSize: spring(100),
-      triangleLeft: spring(-100)
+      videoSize: spring(maxVideoSize),
+      triangleLeft: spring(-100),
+      moveVideoLeft: spring(0)
     } : {
       videoSize: spring(window.innerWidth > 1440 ? 30 : 70),
-      triangleLeft: spring(-50)
+      triangleLeft: spring(-50),
+      moveVideoLeft: spring(moveVideoLeft)
     };
 
     return (
@@ -139,8 +157,9 @@ class Video extends Component {
               left: containerLeft,
             }}>
               <Motion style={motionStyle}>
-                {({ videoSize, triangleLeft }) =>
+                {({ videoSize, triangleLeft, moveVideoLeft }) =>
                   <PlayerContainer
+                    ref={(elem) => this.playerContainer = elem}
                     onMouseMove={this.onMouseMove}
                     onMouseOver={this.onMouseOver}
                     onMouseLeave={this.onMouseLeave}
@@ -165,6 +184,9 @@ class Video extends Component {
                         transform: `translate(${triangleLeft}%, -50%)`
                       }}/>
                     <ReactPlayer
+                      style={{
+                        marginLeft: moveVideoLeft
+                      }}
                       ref={(player) => this.player = player}
                       width={'100%'}
                       height={'auto'}

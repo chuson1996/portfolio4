@@ -65,7 +65,7 @@ const Content = styled(Relative)`
 
 const Background = styled.div`
   position: fixed;
-  background-image: url(${require("assets/body-background.png")});
+  background-image: url(${require("assets/body-background.jpg")});
   background-size: 100%;
   background-position: center center;
   top: 0;
