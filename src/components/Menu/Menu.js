@@ -65,7 +65,7 @@ const Content = styled(Relative)`
 
 const Background = styled.div`
   position: fixed;
-  background-image: url(${require("assets/body-background.jpg")});
+  background-image: url(${require("assets/body-background.png")});
   background-size: 100%;
   background-position: center center;
   top: 0;
@@ -109,9 +109,9 @@ class Menu extends Component {
         <Background style={menuOpen ? null : { opacity: 0 }} />
         <Container hide={!menuOpen}>
           <Content>
-            <Div marginBottom="100px">
+            <Div marginBottom="50px">
               <RevealUp show={menuOpen}>
-                <h1>
+                <h1 style={{ marginTop: 0 }}>
                   <A
                     toColor={color3}
                     color={menuTextColor}

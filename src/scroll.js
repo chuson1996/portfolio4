@@ -3,11 +3,21 @@ const DISABLE_SCROLLING = 'scroll/DISABLE_SCROLLING';
 
 export function enableScrolling() {
   document.querySelector('html').style.overflow = 'initial';
+  document.querySelector('body').style.overflow = 'initial';
+  // document.querySelector('html').style.position = 'initial';
+  // setTimeout(function() {
+  //   window.scrollTo(0, document.querySelector('html').style.top);
+  // }, 10);
+  
   return { type: ENABLE_SCROLLING };
 }
 
 export function disableScrolling() {
   document.querySelector('html').style.overflow = 'hidden';
+  document.querySelector('body').style.overflow = 'hidden';
+  // document.querySelector('html').style.top = `${-window.scrollY}px`;
+  // document.querySelector('html').style.position = 'fixed';
+
   return { type: DISABLE_SCROLLING };
 }
 
