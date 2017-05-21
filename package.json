@@ -78,6 +78,7 @@
     "react-fold-image": "^1.0.1",
     "react-glitch": "0.1.3",
     "react-image-parallax": "^1.0.0",
+    "react-image-parallax2": "^0.1.6",
     "react-motion": "^0.4.7",
     "react-player": "0.18.0",
     "react-redux": "^5.0.2",
@@ -86,6 +87,7 @@
     "react-transition-group": "^1.1.1",
     "react-waypoint": "^5.1.0",
     "react-zoomy": "^1.1.1",
+    "really-smooth-scroll": "^2.0.1",
     "redux": "^3.6.0",
     "redux-form": "^6.5.0",
     "styled-components": "latest"

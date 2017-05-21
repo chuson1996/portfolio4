@@ -62,7 +62,7 @@ export const Img1 = styled.img`
 export const Img2 = styled(Img1)`
 `;
 
-export const Img3 = styled(Img1)`
+export const Img3 = styled(Relative)`
   width: 60vw;
 `;
 

@@ -7,7 +7,7 @@ import c from 'classnames';
 import WaypointShow from 'components/WaypointShow/WaypointShow';
 // import { color3, color2, color1, color4, color5 } from 'theme/variables';
 import ScrollIndicator from 'components/ScrollIndicator/ScrollIndicator';
-import { BackgroundDiv, Headline, SubHeadline } from './styles';
+import { BackgroundDiv, Headline, SubHeadline, ImageContainer } from './BriefAbout.style';
 import transitionFinalize, { whenLeaving, whenAppearing, whenEntering } from 'helpers/transitionFinalize';
 
 class BriefAbout extends Component {
@@ -85,6 +85,20 @@ class BriefAbout extends Component {
                         To me, it's a super power to be able to create solutions in the form of a website. For example, I created an app that helps me pass my Finnish exam. Recently, I even created a bookmark manager for all my saved links because I couldn't find any other straightforward and easy ways. It's called <A target="_blank" href="http://codeeveryday.life">codeeveryday.life</A>
                       </span>
                     </RevealP>
+                  }
+                </WaypointShow>
+                <WaypointShow>
+                  {({ show }) =>
+                    <ImageContainer fromLeftToRight className={c({ 'hide': !show })}>
+                      <span>
+                        <a target="_blank" href="http://codeeveryday.life">
+                          <img
+                            width="100%"
+                            src={require('assets/codeeveryday.png')}
+                            alt="codeeveryday"/>
+                        </a>
+                      </span>
+                    </ImageContainer>
                   }
                 </WaypointShow>
                 <WaypointShow>

@@ -11,8 +11,9 @@ import createRoutes from './routes';
 // import scrollInitiate from './scroll';
 import { loadTracks, middleware as audiosMiddleware } from 'redux/modules/audios';
 import clientMiddleware from 'redux/middlewares/clientMiddleware';
-// import { AppContainer } from 'react-hot-loader';
-// import Root from 'containers/Root/Root';
+import ReallySmoothScroll from 'really-smooth-scroll';
+
+ReallySmoothScroll.shim();
 
 require("font-awesome-webpack");
 
@@ -39,9 +40,11 @@ loadTracks(store);
 
 const history = syncHistoryWithStore(hashHistory, store);
 
-// hashHistory.listen((location) => {
-//   window.scrollTo(0, 0);
-// });
+history.listen((location) => {
+  window.oldScrollTo(0, 0);
+  // setTimeout(function() {
+  // }, 0);
+});
 
 ReactDOM.render(
   <Provider store={store}>

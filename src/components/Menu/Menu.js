@@ -23,6 +23,7 @@ const Container = styled(Flex)`
   height: 100vh;
   top: 0;
   left: 0;
+  font-size: 16px;
 
   justify-content: center;
   flex-direction: column;
@@ -57,7 +58,7 @@ const Content = styled(Relative)`
   padding-left: 100px;
   padding-right: 100px;
   ${media.tablet`
-    padding-top: 60px;
+    padding-top: 0;
     padding-left: 40px;
     padding-right: 40px;
   `}
@@ -151,6 +152,17 @@ class Menu extends Component {
                     onClick={() => goTo("/aboutMe")}
                   >
                     ABOUT ME
+                  </A>
+                </h1>
+              </RevealUp>
+              <RevealUp show={menuOpen}>
+                <h1>
+                  <A
+                    toColor={color3}
+                    color={menuTextColor}
+                    onClick={() => goTo("/tutorials")}
+                  >
+                    HOW I CREATED THIS PORTFOLIO
                   </A>
                 </h1>
               </RevealUp>

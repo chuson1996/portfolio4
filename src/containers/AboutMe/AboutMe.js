@@ -304,7 +304,7 @@ class AboutMe extends Component {
                           onEnter={playVideo1}/>
                         <Video
                           playing={video1Playing}
-                          videoUrl={require('assets/basketball.mov')}/>
+                          videoUrl={require('assets/basketball.mp4')}/>
                       </StyledVideoBlock>
                     }
                   </WaypointShow>
@@ -313,7 +313,7 @@ class AboutMe extends Component {
                   <ReactPlayer
                     width="100%"
                     height="auto"
-                    url={require('assets/basketball.mov')}
+                    url={require('assets/basketball.mp4')}
                     playing={false}
                     controls
                   />

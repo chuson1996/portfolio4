@@ -7,7 +7,7 @@ import BriefAbout from "containers/BriefAbout/BriefAbout";
 // import SpeedVocab from 'containers/SpeedVocab/SpeedVocab';
 import Projects from "containers/Projects/Projects";
 import AboutMe from "containers/AboutMe/AboutMe";
-
+import Tutorial from "containers/Tutorial/Tutorial";
 
 export default function createRoutes(store, history) {
   return (
@@ -21,6 +21,7 @@ export default function createRoutes(store, history) {
         </Route> */}
         <Route path="projects" component={Projects} />
         <Route path="aboutMe" component={AboutMe} />
+        <Route path="tutorials" component={Tutorial} />
       </Route>
     </Router>
   );

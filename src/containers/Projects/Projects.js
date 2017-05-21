@@ -21,7 +21,7 @@ import {
   StyledFoldImage,
 } from './Projects.style';
 import { Motion, spring } from 'react-motion';
-import ImageParallax from 'react-image-parallax';
+import ImageParallax from 'react-image-parallax2';
 import CssToMatrix from 'css-to-matrix';
 import BreakParagraph from 'components/BreakParagraph/BreakParagraph';
 // import Waypoint from 'react-waypoint';
@@ -139,7 +139,7 @@ class Projects extends Component {
                       <Div>0</Div>
                       <Div>2</Div>
                     </OrderNumber>
-                    <InstallCode right hide={!show}>npm install --save <A target="_blank" href="https://github.com/chuson1996/react-image-parallax">react-image-parallax</A></InstallCode>
+                    <InstallCode right hide={!show}>npm install --save <A target="_blank" href="https://github.com/chuson1996/react-image-parallax2">react-image-parallax2</A></InstallCode>
                   </Relative>
                   <Flex justifyContent="flex-start" marginBottom="70px">
                     <Relative>
@@ -148,21 +148,7 @@ class Projects extends Component {
                         }}>
                         Keep scrolling...
                       </VerticalGuideLine>
-                      <ImageParallax scale={1.5}>
-                        {({y}, onImageLoad) =>
-                          <Img2
-                            style={{
-                              transform: new CssToMatrix()
-                                .scale(1.5, 1.5)
-                                .translate(0, y)
-                                .getMatrixCSS()
-                            }}
-                            onLoad={onImageLoad}
-                            width={'100%'}
-                            src={require('assets/basketball2.png')}
-                            alt="thumbnail"/>
-                        }
-                      </ImageParallax>
+                      <ImageParallax src={require('assets/basketball2.png')} reduceHeight={1/2}/>
                     </Relative>
                   </Flex>
                   <Flex justifyContent="flex-end">
@@ -172,29 +158,17 @@ class Projects extends Component {
                         }}>
                         See the parallax?
                       </VerticalGuideLine>
-                      <StyledSketchyArrow/>
-                      <ImageParallax scale={1.5}>
-                        {({y}, onImageLoad) =>
-                          <Img3
-                            style={{
-                              transform: new CssToMatrix()
-                                .scale(1.5, 1.5)
-                                .translate(0, y)
-                                .getMatrixCSS()
-                            }}
-                            onLoad={onImageLoad}
-                            width={'100%'}
-                            src={require('assets/basketball3.png')}
-                            alt="thumbnail"/>
-                        }
-                      </ImageParallax>
+                      {/*<StyledSketchyArrow/>*/}
+                      <Img3>
+                        <ImageParallax reduceHeight={1/3} src={require('assets/basketball3.png')}/>
+                      </Img3>
                     </Relative>
                   </Flex>
                 </Group>
               }
             </WaypointShow>
 
-            <WaypointShow bottomOffset={250}>
+            {/*<WaypointShow bottomOffset={250}>
               {({ show }) =>
                 <Group>
                   <Relative noOverflow>
@@ -218,9 +192,9 @@ class Projects extends Component {
                   </Flex>
                 </Group>
               }
-            </WaypointShow>
+            </WaypointShow>*/}
 
-            <WaypointShow bottomOffset={250}>
+            {/*<WaypointShow bottomOffset={250}>
               {({ show }) =>
                 <Group>
                   <Relative textRight noOverflow>
@@ -260,7 +234,7 @@ class Projects extends Component {
                   </ToggleState>
                 </Group>
               }
-            </WaypointShow>
+            </WaypointShow>*/}
 
             <WaypointShow bottomOffset={250}>
               {({ show }) =>
@@ -268,7 +242,7 @@ class Projects extends Component {
                   <Relative noOverflow>
                     <OrderNumber hide={!show}>
                       <Div>0</Div>
-                      <Div>5</Div>
+                      <Div>3</Div>
                     </OrderNumber>
                     <InstallCode hide={!show}>npm install --save <A target="_blank" href="https://github.com/chuson1996/react-8bit">react-8bit</A></InstallCode>
                   </Relative>
@@ -302,7 +276,7 @@ class Projects extends Component {
                   <Relative textRight noOverflow>
                     <OrderNumber hide={!show}>
                       <Div>0</Div>
-                      <Div>6</Div>
+                      <Div>4</Div>
                     </OrderNumber>
                     <InstallCode right hide={!show}>npm install --save <A target="_blank" href="https://github.com/chuson1996/react-fold-image">react-fold-image</A></InstallCode>
                   </Relative>
@@ -318,7 +292,7 @@ class Projects extends Component {
                               startingPoint={3}
                               startingDirection={'down'}
                               hide={!show2}
-                              src="https://upload.wikimedia.org/wikipedia/commons/6/68/Great_Ex_Telescope_Telescope.jpg"
+                              src={require('assets/adidaphat.jpg')}
                               />
                           }
                         </ToggleState>
