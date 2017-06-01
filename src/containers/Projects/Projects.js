@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
-import { A, P, FixedTitle, OrderNumber as _OrderNumber } from 'theme/types';
+import { A, P, FixedTitle, OrderNumber as _OrderNumber, Blockquote } from 'theme/types';
 import { ProjectsContainer, Relative, Container, Flex, Div } from 'theme/grid';
 import { connect } from 'react-redux';
 import ReactZoomy from 'react-zoomy';
-import ToggleState from 'components/ToggleState/ToggleState';
+// import ToggleState from 'components/ToggleState/ToggleState';
 import {
   OrderNumber,
   InstallCode,
   Img1,
-  Img2,
+  // Img2,
   Img3,
-  MagicParagraph,
+  // MagicParagraph,
   VerticalGuideLine,
   // Square,
   Group,
-  StyledSketchyArrow,
-  StyledGlitchImage,
+  // StyledSketchyArrow,
+  // StyledGlitchImage,
   StyledImage8Bit,
   StyledImageBefore8Bit,
-  StyledFoldImage,
+  // StyledFoldImage,
 } from './Projects.style';
 import { Motion, spring } from 'react-motion';
 import ImageParallax from 'react-image-parallax2';
-import CssToMatrix from 'css-to-matrix';
-import BreakParagraph from 'components/BreakParagraph/BreakParagraph';
+// import CssToMatrix from 'css-to-matrix';
+// import BreakParagraph from 'components/BreakParagraph/BreakParagraph';
 // import Waypoint from 'react-waypoint';
 import WaypointShow from 'components/WaypointShow/WaypointShow';
 
@@ -74,6 +74,7 @@ class Projects extends Component {
         <FixedTitle>Open-source Projects</FixedTitle>
         <ProjectsContainer>
           <Container>
+            <Blockquote>"I surf websites for the best looking and most interesting features and try to replicate them with ReactJs. (Why ReactJs? Because everything is easier with ReactJs). Afterwards, I make libraries and publish them to the world."</Blockquote>
             <WaypointShow bottomOffset={250}>
               {({ show }) =>
                 <Group>
@@ -278,6 +279,21 @@ class Projects extends Component {
                       <Div>0</Div>
                       <Div>4</Div>
                     </OrderNumber>
+                    <InstallCode right hide={!show}>npm install --save <A target="_blank" href="https://github.com/chuson1996/really-smooth-scroll">really-smooth-scroll</A></InstallCode>
+                  </Relative>
+                  <p style={{textAlign: 'right'}}>Do you notice how subtly smooth the scrolling in this website is? Yep. That's what this library does.</p>
+                </Group>
+              }
+            </WaypointShow>
+
+            {/*<WaypointShow bottomOffset={250}>
+              {({ show }) =>
+                <Group>
+                  <Relative textRight noOverflow>
+                    <OrderNumber hide={!show}>
+                      <Div>0</Div>
+                      <Div>4</Div>
+                    </OrderNumber>
                     <InstallCode right hide={!show}>npm install --save <A target="_blank" href="https://github.com/chuson1996/react-fold-image">react-fold-image</A></InstallCode>
                   </Relative>
                   <Relative block>
@@ -292,7 +308,7 @@ class Projects extends Component {
                               startingPoint={3}
                               startingDirection={'down'}
                               hide={!show2}
-                              src={require('assets/adidaphat.jpg')}
+                              src={require('assets/TNW.jpg')}
                               />
                           }
                         </ToggleState>
@@ -301,7 +317,7 @@ class Projects extends Component {
                   </Relative>
                 </Group>
               }
-            </WaypointShow>
+            </WaypointShow>*/}
             <P textCenter>
               <A
                 target="_blank"

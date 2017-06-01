@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { color3, color1, color2, color5 } from 'theme/variables';
+import { color3, color1, color2, color5, gray } from 'theme/variables';
 import media from 'theme/media';
 
 export const FixedTitle = styled.h1`
@@ -142,3 +142,8 @@ export const RevealA = styled(A)`
     }
   }
 `;
+
+export const Blockquote = styled.blockquote`
+  font-style: italic;
+  color: ${gray};
+`

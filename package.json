@@ -87,7 +87,7 @@
     "react-transition-group": "^1.1.1",
     "react-waypoint": "^5.1.0",
     "react-zoomy": "^1.1.1",
-    "really-smooth-scroll": "^2.0.1",
+    "really-smooth-scroll": "latest",
     "redux": "^3.6.0",
     "redux-form": "^6.5.0",
     "styled-components": "latest"

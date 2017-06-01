@@ -97,6 +97,7 @@ class Video extends Component {
     if (zoom) {
       this.props.enableScrolling();
     } else {
+      window.stopScrolling();
       this.props.disableScrolling();
       this.player.seekTo(0);
     }

@@ -5423,9 +5423,9 @@ readline2@^1.0.1:
     is-fullwidth-code-point "^1.0.0"
     mute-stream "0.0.5"
 
-really-smooth-scroll:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/really-smooth-scroll/-/really-smooth-scroll-2.0.1.tgz#1635ef6c6e51e01f52857a59c31daa684280884f"
+really-smooth-scroll@latest:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/really-smooth-scroll/-/really-smooth-scroll-2.1.0.tgz#023b373ff135118de05e37cf41ebade5118c6db0"
   dependencies:
     performance-now "^2.1.0"
     raf "^3.3.2"

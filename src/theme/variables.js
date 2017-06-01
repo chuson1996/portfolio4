@@ -18,6 +18,7 @@ export const white = 'white';
 export const red = 'rgba(242, 95, 92, 1)'; // Dark Orange
 export const yellow = 'rgb(253, 238, 108)'; // Light Yellow
 export const blue = 'rgba(36, 123, 160, 1)'; // Blueish
+export const gray = '#828282';
 
 export const menuBackground = color1;
 export const menuTextColor = color5;
