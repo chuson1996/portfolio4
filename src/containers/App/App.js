@@ -59,6 +59,12 @@ class App extends Component {
     if (this.state.waitingToFinishLoading && !nextProps.loading) {
       this.setState({ waitingToFinishLoading: false });
     }
+
+    if (this.props.location.pathname !== nextProps.location.pathname) {
+      this.setState({
+        waitingToFinishLoading: true
+      });
+    }
   }
 
   render() {
