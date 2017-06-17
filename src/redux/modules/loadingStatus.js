@@ -69,5 +69,5 @@ export function deregisterItem(key) {
 }
 
 export function isLoading(globalState) {
-  return Object.values(globalState.loadingStatus.items).every((loading) => loading);
+  return Object.values(globalState.loadingStatus.items).some((loading) => loading);
 }
