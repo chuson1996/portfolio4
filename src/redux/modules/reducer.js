@@ -9,12 +9,14 @@ import { reducer as projectsReducer } from 'containers/Projects/Projects';
 import { reducer as aboutMeReducer } from 'containers/AboutMe/AboutMe';
 import { reducer as scrollReducer } from 'scroll';
 import audiosReducer from './audios';
+import loadingStatus from './loadingStatus';
 
 export default combineReducers({
   routing: routerReducer,
   form: formReducer,
   loadingProgress,
   menu,
+  loadingStatus,
   audios: audiosReducer,
   // scroll
   scroll: scrollReducer,

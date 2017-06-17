@@ -3,8 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { hashHistory } from 'react-router';
-import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
+import { routerMiddleware } from 'react-router-redux';
 import reducer from 'redux/modules/reducer';
 import 'theme/globalStyles';
 import createRoutes from './routes';
@@ -12,15 +11,18 @@ import createRoutes from './routes';
 import { loadTracks, middleware as audiosMiddleware } from 'redux/modules/audios';
 import clientMiddleware from 'redux/middlewares/clientMiddleware';
 import ReallySmoothScroll from 'really-smooth-scroll';
+import createHistory from 'history/createHashHistory'
+
+const history = createHistory();
 
 ReallySmoothScroll.shim();
 
 require("font-awesome-webpack");
 
 const middleware = [
-  routerMiddleware(hashHistory),
+  routerMiddleware(history),
   audiosMiddleware,
-  clientMiddleware()
+  clientMiddleware(),
 ];
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -37,8 +39,6 @@ const store = createStore(
 
 // scrollInitiate(store);
 loadTracks(store);
-
-const history = syncHistoryWithStore(hashHistory, store);
 
 history.listen((location) => {
   window.oldScrollTo(0, 0);

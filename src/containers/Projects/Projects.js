@@ -3,6 +3,7 @@ import { A, P, FixedTitle, OrderNumber as _OrderNumber, Blockquote } from 'theme
 import { ProjectsContainer, Relative, Container, Flex, Div } from 'theme/grid';
 import { connect } from 'react-redux';
 import ReactZoomy from 'react-zoomy';
+import asyncImageEnhance from 'helpers/asyncImageEnhance';
 // import ToggleState from 'components/ToggleState/ToggleState';
 import {
   OrderNumber,
@@ -16,7 +17,7 @@ import {
   Group,
   // StyledSketchyArrow,
   // StyledGlitchImage,
-  StyledImage8Bit,
+  StyledImageAfter8Bit,
   StyledImageBefore8Bit,
   // StyledFoldImage,
 } from './Projects.style';
@@ -46,6 +47,43 @@ const initialState = {
   isGroup2Shown: false,
   isGroup3Shown: false,
 };
+
+const Basketball1Image = asyncImageEnhance('projects/basketball1')(
+  ({doneLoading, ...rest}) =>
+    <Img1
+      onLoad={doneLoading}
+      {...rest}
+      src={require('assets/basketball1.png')}
+      alt="basketball1"/>
+)
+
+const Basketball2Image = asyncImageEnhance('projects/basketball2')(
+  ({ doneLoading, ...rest }) =>
+    <ImageParallax
+      onLoad={doneLoading}
+      {...rest}/>
+);
+
+const Basketball3Image = asyncImageEnhance('projects/basketball3')(
+  ({ doneLoading, ...rest }) =>
+    <ImageParallax
+      onLoad={doneLoading}
+      {...rest}/>
+);
+
+const Image8BitBefore = asyncImageEnhance('projects/8bitmebefore')(
+  ({ doneLoading, ...rest }) =>
+    <StyledImageBefore8Bit
+      onLoad={doneLoading}
+      {...rest}/>
+);
+
+const Image8BitAfter = asyncImageEnhance('projects/8bitmeafter')(
+  ({ doneLoading, ...rest }) =>
+    <StyledImageAfter8Bit
+      onLoad={doneLoading}
+      {...rest}/>
+);
 
 export function reducer(state = initialState, action) {
   switch(action.type) {
@@ -108,12 +146,11 @@ class Projects extends Component {
                           <Motion style={{ scale: image1Hover ? spring(1.1) : spring(1) }}>
                             {({ scale }) =>
                               <Relative noOverflow>
-                                <Img1
+                                <Basketball1Image
                                   style={{
                                     transform: `scale(${scale})`
                                   }}
-                                  onClick={showImage}
-                                  src={require('assets/basketball1.png')} alt="basketball1"/>
+                                  onClick={showImage}/>
                               </Relative>
                             }
                           </Motion>
@@ -149,7 +186,10 @@ class Projects extends Component {
                         }}>
                         Keep scrolling...
                       </VerticalGuideLine>
-                      <ImageParallax src={require('assets/basketball2.png')} reduceHeight={1/2}/>
+                      <Basketball2Image
+                        src={require('assets/basketball2.png')}
+                        reduceHeight={1/2}
+                      />
                     </Relative>
                   </Flex>
                   <Flex justifyContent="flex-end">
@@ -161,7 +201,7 @@ class Projects extends Component {
                       </VerticalGuideLine>
                       {/*<StyledSketchyArrow/>*/}
                       <Img3>
-                        <ImageParallax reduceHeight={1/3} src={require('assets/basketball3.png')}/>
+                        <Basketball3Image reduceHeight={1/3} src={require('assets/basketball3.png')}/>
                       </Img3>
                     </Relative>
                   </Flex>
@@ -252,7 +292,7 @@ class Projects extends Component {
                       <VerticalGuideLine right>
                         Original
                       </VerticalGuideLine>
-                      <StyledImageBefore8Bit
+                      <Image8BitBefore
                         src={require('assets/me.jpg')}
                         alt={'My Selfie'}
                       />
@@ -261,7 +301,7 @@ class Projects extends Component {
                       <VerticalGuideLine right>
                         Pixelated!
                       </VerticalGuideLine>
-                      <StyledImage8Bit
+                      <Image8BitAfter
                         scaleFactor={4}
                         src={require('assets/me.jpg')}
                       />

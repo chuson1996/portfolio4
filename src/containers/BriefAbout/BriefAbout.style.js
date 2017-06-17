@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { RevealH1, RevealH2 } from 'theme/types';
-import { Div, RevealDiv } from 'theme/grid';
+import { RevealDiv } from 'theme/grid';
 import media from 'theme/media';
 import { black } from 'theme/variables';
+import DivWithBgImage from 'components/DivWithBgImage/DivWithBgImage';
 
 export const Headline = styled(RevealH1)`
   color: white;
@@ -15,13 +16,15 @@ export const Headline = styled(RevealH1)`
   `}
 `;
 
-export const BackgroundDiv = styled(Div)`
+export const BackgroundDiv = styled(DivWithBgImage).attrs({
+  backgroundImageUrl: require('assets/oh-my-god.gif')
+})`
   width: 100%;
   height: 100vh;
-  backgroundImage: url(${require('assets/oh-my-god.gif')});
-  backgroundPosition: center center;
-  backgroundRepeat: no-repeat;
-  backgroundSize: cover;
+  background-image: url(${require('assets/oh-my-god.gif')});
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 export const SubHeadline = styled(RevealH2)`

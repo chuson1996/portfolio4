@@ -110,7 +110,7 @@ const Wrapper = styled(Relative)`
 
   cursor: pointer;
 
-  transform: opacity 1s;
+  transition: opacity 1s;
 `;
 
 class previousArrow extends Component {
@@ -140,8 +140,8 @@ class previousArrow extends Component {
 
     return (
       <Wrapper
-        onClick={onClick}
-        style={{ opacity: loadingProgress === 100 ? 1 : 0 }}
+        onClick={text && onClick}
+        // style={{ opacity: loadingProgress === 100 ? 1 : 0 }}
         onMouseOver={mouseOver}
         onMouseLeave={mouseLeave}>
         <Relative>
@@ -192,11 +192,12 @@ class previousArrow extends Component {
 export default connect(
   (state) => ({
     hover: state.previousArrow.hover,
-    loadingProgress: state.loadingProgress.data
+    loadingProgress: state.loadingProgress.data,
+    location: state.routing.location
   }),
   {
     mouseOver,
     mouseLeave,
     push
   }
-)(withRouter(previousArrow));
+)(previousArrow);

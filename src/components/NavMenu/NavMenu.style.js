@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Fixed } from 'theme/grid';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { color3, color4, white } from 'theme/variables';
 
 export const Container = styled(Fixed)`

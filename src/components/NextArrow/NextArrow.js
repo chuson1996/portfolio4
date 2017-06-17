@@ -137,8 +137,8 @@ class NextArrow extends Component {
 
     return (
       <Wrapper
-        onClick={onClick}
-        style={{ opacity: loadingProgress === 100 ? 1 : 0 }}
+        onClick={text && onClick}
+        // style={{ opacity: loadingProgress === 100 ? 1 : 0 }}
         onMouseOver={mouseOver}
         onMouseLeave={mouseLeave}>
         <Relative>
@@ -189,11 +189,12 @@ class NextArrow extends Component {
 export default connect(
   (state) => ({
     hover: state.nextArrow.hover,
-    loadingProgress: state.loadingProgress.data
+    loadingProgress: state.loadingProgress.data,
+    location: state.routing.location
   }),
   {
     mouseOver,
     mouseLeave,
     push
   }
-)(withRouter(NextArrow));
+)(NextArrow);

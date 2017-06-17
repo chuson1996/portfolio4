@@ -149,7 +149,7 @@ export const StyledImageBefore8Bit = styled.img`
   `}
 `;
 
-export const StyledImage8Bit = styled(Image8Bit)`
+export const StyledImageAfter8Bit = styled(Image8Bit)`
   width: 300px;
   margin-left: 50px;
   ${media.tablet`

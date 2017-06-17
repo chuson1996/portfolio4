@@ -8,31 +8,60 @@ import WaypointShow from 'components/WaypointShow/WaypointShow';
 // import { color3, color2, color1, color4, color5 } from 'theme/variables';
 import ScrollIndicator from 'components/ScrollIndicator/ScrollIndicator';
 import { BackgroundDiv, Headline, SubHeadline, ImageContainer } from './BriefAbout.style';
-import transitionFinalize, { whenLeaving, whenAppearing, whenEntering } from 'helpers/transitionFinalize';
+// import transitionFinalize, { whenLeaving, whenAppearing, whenEntering } from 'helpers/transitionFinalize';
+import asyncImageEnhance from 'helpers/asyncImageEnhance';
+
+const ProgressBackgroundDiv = (asyncImageEnhance('briefAboutBackground')(
+  ({doneLoading}) =>
+    <BackgroundDiv
+      onLoadStatusChange={({ loading }) => { !loading && doneLoading() }}
+      noOverflow
+      textCenter
+    />
+));
+
+const CodeeverydayImg = asyncImageEnhance('briefAboutCodeeveryday')(
+  ({doneLoading}) =>
+    <img
+      onLoad={doneLoading}
+      width="100%"
+      src={require('assets/codeeveryday.png')}
+      alt="codeeveryday"/>
+);
 
 class BriefAbout extends Component {
-  componentWillReceiveProps(nextProps) {
-    whenLeaving(this.props, nextProps)(() => {
-      console.log('BriefAbout is leaving');
-    })
+  // componentWillReceiveProps(nextProps) {
+  //   whenLeaving(this.props, nextProps)(() => {
+  //     console.log('BriefAbout is leaving');
+  //   })
 
-    whenAppearing(this.props, nextProps)(() => {
-      console.log('Brief About is appearing');
-    })
+  //   whenAppearing(this.props, nextProps)(() => {
+  //     console.log('Brief About is appearing');
+  //   })
 
-    whenEntering(this.props, nextProps)(() => {
-      console.log('Brief About is entering');
-    })
-  }
+  //   whenEntering(this.props, nextProps)(() => {
+  //     console.log('Brief About is entering');
+  //   })
+  // }
+
+  // componentDidMount() {
+  //   this.props.registerItem('briefAboutBackground');
+  //   this.props.registerItem('briefAboutCodeeveryday');
+  // }
+
+  // componentWillUnmount() {
+  //   this.props.deregisterItem('briefAboutBackground');
+  //   this.props.deregisterItem('briefAboutCodeeveryday');
+  // }
 
   render() {
-    const { doneLoading } = this.props;
     return (
       <div>
-        {doneLoading && <div>
+        <div>
           <WaypointShow>
             {({ show }) =>
               <Relative>
+                <ProgressBackgroundDiv/>
                 <Absolute center middle zIndex="2">
                   <Headline
                     color={'white'}
@@ -49,11 +78,6 @@ class BriefAbout extends Component {
                     <span>Front-end developer</span>
                   </SubHeadline>
                 </Absolute>
-                <BackgroundDiv
-                  noOverflow
-                  textCenter
-                >
-                </BackgroundDiv>
                 <Absolute center bottom="15px">
                   <ScrollIndicator color={'white'} style={{
                     width: 29,
@@ -92,10 +116,7 @@ class BriefAbout extends Component {
                     <ImageContainer fromLeftToRight className={c({ 'hide': !show })}>
                       <span>
                         <a target="_blank" href="http://codeeveryday.life">
-                          <img
-                            width="100%"
-                            src={require('assets/codeeveryday.png')}
-                            alt="codeeveryday"/>
+                          <CodeeverydayImg/>
                         </a>
                       </span>
                     </ImageContainer>
@@ -112,14 +133,14 @@ class BriefAbout extends Component {
                 </WaypointShow>
               </div>
           </Container>
-        </div>}
+        </div>
       </div>
     );
   }
 }
 
-export default transitionFinalize(connect(
+export default connect(
   (state) => ({
     doneLoading: state.loadingProgress.data === 100
   })
-)(BriefAbout));
+)(BriefAbout);

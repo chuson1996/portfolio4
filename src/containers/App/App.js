@@ -10,16 +10,23 @@ import PreviousArrow from 'components/PreviousArrow/PreviousArrow';
 import { Fixed } from 'theme/grid';
 import { backgroundColor, color2 } from 'theme/variables';
 import media from 'theme/media';
-import TransitionGroup from 'react-transition-group/TransitionGroup';
+// import TransitionGroup from 'react-transition-group/TransitionGroup';
 import NavMenu from 'components/NavMenu/NavMenu';
 import { Tablet, NonTablet } from 'components/Media/Media';
+import DivWithBgImage from 'components/DivWithBgImage/DivWithBgImage';
+import {connect} from 'react-redux';
+import {isLoading} from 'redux/modules/loadingStatus';
+import { registerItem, doneLoading } from 'redux/modules/loadingStatus';
+import { withRouter } from 'react-router';
 
 const Body = styled.div`
   // background-color: ${color1};
   min-height: 100vh;
 `;
 
-const Background = styled.div`
+const Background = styled(DivWithBgImage).attrs({
+  backgroundImageUrl: require('assets/body-background.png')
+})`
   position: fixed;
   background-image: url(${require('assets/body-background.png')});
   background-color: ${backgroundColor};
@@ -40,29 +47,23 @@ const Background = styled.div`
 `;
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: true
-    };
+  state = {
+    waitingToFinishLoading: true
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        loading: false
-      });
-    }, /* 4000 */ 1000);
+    this.props.registerItem('appBackground');
   }
-
-  FirstChild(props) {
-    const childrenArray = React.Children.toArray(props.children);
-    // console.log(props.children);
-    return childrenArray[0] || null;
+  
+  componentWillReceiveProps(nextProps) {
+    if (this.state.waitingToFinishLoading && !nextProps.loading) {
+      this.setState({ waitingToFinishLoading: false });
+    }
   }
 
   render() {
-    const { loading } = this.state;
+    const { loading, doneLoading } = this.props;
+    const { waitingToFinishLoading } = this.state;
     return (
       <Body>
         <Tablet>
@@ -77,11 +78,11 @@ class App extends Component {
           </ThemeProvider>
         </Fixed>
         <Menu/>
-        <Background/>
-        <LoadingPage loading={loading}/>
-        <TransitionGroup>
-          {React.cloneElement(this.props.children, { key: this.props.location.pathname })}
-        </TransitionGroup>
+        <Background onLoadStatusChange={({ loading }) => {
+          if (!loading) doneLoading('appBackground');
+        }}/>
+        <LoadingPage loading={waitingToFinishLoading && loading}/>
+        {this.props.children}
         <PreviousArrow/>
         <NextArrow/>
       </Body>
@@ -89,4 +90,11 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(connect(
+  (state) => ({
+    loading: isLoading(state)
+  }),
+  {
+    registerItem, doneLoading
+  }
+)(App));
