@@ -109,10 +109,10 @@ class Projects extends Component {
 
     return (
       <div>
-        <FixedTitle>Open-source Projects</FixedTitle>
+        <FixedTitle>Projects</FixedTitle>
         <ProjectsContainer>
           <Container>
-            <Blockquote>"I surf websites for the best looking and most interesting features and try to replicate them with ReactJs. (Why ReactJs? Because everything is easier with ReactJs). Afterwards, I make libraries and publish them to the world."</Blockquote>
+            <Blockquote>"I surf websites for the best looking and most interesting features and try to replicate them with ReactJs. (Why ReactJs? Because everything is easier with ReactJs). Afterwards, I make libraries and publish them."</Blockquote>
             <WaypointShow bottomOffset={250}>
               {({ show }) =>
                 <Group>
@@ -321,7 +321,7 @@ class Projects extends Component {
                     </OrderNumber>
                     <InstallCode right hide={!show}>npm install --save <A target="_blank" href="https://github.com/chuson1996/really-smooth-scroll">really-smooth-scroll</A></InstallCode>
                   </Relative>
-                  <p style={{textAlign: 'right'}}>Do you notice how subtly smooth the scrolling in this website is? Yep. That's what this library does.</p>
+                  <p style={{textAlign: 'right'}}>This library smoothens scrolling in desktop browser.</p>
                 </Group>
               }
             </WaypointShow>

@@ -5,9 +5,10 @@ import { color3, color4, white } from 'theme/variables';
 
 export const Container = styled(Fixed)`
   right: 10vh;
-  top: 35px;
+  top: 28px;
   z-index: 99;
   background: ${white};
+  padding: 7px;
 `;
 
 export const StyledLink = styled(Link)`

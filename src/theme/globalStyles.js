@@ -1,5 +1,5 @@
 import { injectGlobal } from 'styled-components';
-import { color2, textColor, color4, normalFontFamily, headlineFontFamily } from './variables';
+import { color2, textColor, color4, normalFontFamily } from './variables';
 import media from 'theme/media';
 
 /* eslint-disable */
@@ -43,6 +43,13 @@ injectGlobal`
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding-left:0;
+  }
+
+  blockquote {
+    ${media.tablet`
+      margin-left: 0;
+      margin-right: 0;
+    `}
   }
 `;
 /* eslint-enable */

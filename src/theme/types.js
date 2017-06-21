@@ -71,6 +71,13 @@ export const A = styled.a`
       z-index: -1;
     }
   }
+
+  ${media.tablet`
+    &::after,
+    &::before {
+      display: none;
+    }
+  `}
 `;
 
 const commonRevealProps = css`

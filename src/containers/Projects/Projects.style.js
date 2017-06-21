@@ -144,17 +144,19 @@ export const StyledGlitchImage = styled(GlitchImage)`
 
 export const StyledImageBefore8Bit = styled.img`
   width: 300px;
+  display: block;
   ${media.tablet`
-    width: 100%;
+    width: 29vw;
   `}
 `;
 
 export const StyledImageAfter8Bit = styled(Image8Bit)`
   width: 300px;
   margin-left: 50px;
+  display: block;
   ${media.tablet`
-    width: 100%;
-    margin-left: 0;
+    margin-left: 50px;
+    width: 29vw;
   `}
 `;
 

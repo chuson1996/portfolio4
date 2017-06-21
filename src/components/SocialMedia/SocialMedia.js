@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import styled, { css, ThemeProvider } from 'styled-components';
-import { socialMediaColor, socialMediaInverseColor, color3 } from 'theme/variables';
+import styled, { css } from 'styled-components';
+import { color3 } from 'theme/variables';
 import { connect } from 'react-redux';
 // import media from 'theme/media';
 import { Flex } from 'theme/grid';
@@ -9,7 +9,7 @@ const Container = styled(Flex)`
   color: ${({ theme: { color }}) => color};
   align-content: center;
 
-  font-size: 0.7em;
+  font-size: 1em;
 
   transition: color .3s;
 

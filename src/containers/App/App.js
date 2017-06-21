@@ -61,8 +61,6 @@ class App extends Component {
     }
 
     if (this.props.location.pathname !== nextProps.location.pathname) {
-      console.log('CCCC');
-      console.log(nextProps.loading);
       this.setState({
         waitingToFinishLoading: true
       });

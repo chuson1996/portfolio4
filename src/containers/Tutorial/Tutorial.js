@@ -121,6 +121,33 @@ const tutorials = [
     description: `
       <p>People hire people. So you have to prove you are an awesome person that others want to work with. In my about me page, I describe my hobbies and the people I admire and shape the way I am now. In this video, I'll show you how I implemented this page.</p>
     `
+  },
+  {
+    index: '13',
+    title: 'Deploy your portfolio with Github Pages',
+    thumbnail: 'https://i.ytimg.com/vi/nyjarJhVQMM/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLAdoWYQ0CqXseXUjOE4jYfYD7sUvA',
+    url: 'https://i.ytimg.com/vi/RupYh-fd8hQ/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAvqrYCpdH8r53S9HjPemO9pp4P3g',
+    description: `
+      <p>You got your website ready (almost). Then it's time to deploy it.</p>
+    `
+  },
+  {
+    index: '14',
+    title: 'Create Video Play Button | SVG, react-toggle-state and more',
+    thumbnail: 'https://i.ytimg.com/vi/h7Rpqh2jbxg/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB7cksBjw5sCtu7HuV2dSyl3S8YUw',
+    url: 'https://www.youtube.com/watch?v=h7Rpqh2jbxg',
+    description: `
+      <p>We will do style the portfolio again with styled-components</p>
+    `
+  },
+  {
+    index: '15',
+    title: 'LAST EPISODE OF PORTFOLIO TUTORIALS',
+    thumbnail: 'https://i.ytimg.com/vi/5ONWqUSOwu8/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDzfXz2QsSf1HbGvfMbNAolnqeLIw',
+    url: 'https://www.youtube.com/watch?v=5ONWqUSOwu8',
+    description: `
+      <p>Last episode and what's next on FroDev.</p>
+    `
   }
 ];
 
@@ -155,7 +182,7 @@ class Tutorial extends Component {
             </Relative>
           </TutorialContainer>
         )}
-        <p>There will more tutorials of this series coming up, so subscribe to <A target="_blank" href="https://www.youtube.com/c/FroDevers">my youtube channel</A> to get notified.</p>
+        <p>To see more content about web development like this, subscribe to <A target="_blank" href="https://www.youtube.com/c/FroDevers">FroDev</A>.</p>
       </Container>
     );
   }
