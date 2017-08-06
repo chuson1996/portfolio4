@@ -84,7 +84,7 @@ class App extends Component {
           </ThemeProvider>
         </Fixed>
         <Menu/>
-        <Background onLoadStatusChange={({ loading }) => {
+        <Background onLoad={({ loading }) => {
           if (!loading) doneLoading('appBackground');
         }}/>
         <LoadingPage loading={waitingToFinishLoading && loading}/>

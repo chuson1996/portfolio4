@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Relative } from 'theme/grid';
 import { TutorialContainer, Thumbnail, DescriptionContainer, OrderNumber } from './Tutorial.style';
 import { A } from 'theme/types';
+import AsyncImage from 'components/AsyncImage/AsyncImage';
 
 const tutorials = [
   {
@@ -167,8 +168,8 @@ class Tutorial extends Component {
           <TutorialContainer key={i}>
             <Thumbnail target="_blank" href={url}>
               <Relative>
-                <img className="thumbnail" src={thumbnail} alt="thumbnail"/>
-                <img className="youtubePlayButton" src={require('assets/youtube-play.png')} alt="youtubePlay"/>
+                <AsyncImage className="thumbnail" src={thumbnail} alt="thumbnail"/>
+                <AsyncImage className="youtubePlayButton" src={require('assets/youtube-play.png')} alt="youtubePlay"/>
               </Relative>
             </Thumbnail>
             <Relative>

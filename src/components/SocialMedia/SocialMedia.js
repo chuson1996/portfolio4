@@ -9,7 +9,7 @@ const Container = styled(Flex)`
   color: ${({ theme: { color }}) => color};
   align-content: center;
 
-  font-size: 1em;
+  font-size: 0.7em;
 
   transition: color .3s;
 

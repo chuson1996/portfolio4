@@ -5,22 +5,22 @@ import { Div } from 'theme/grid';
 
 const DivWithBgImage = lifecycle({
   componentDidMount() {
-    if (this.props.onLoadStatusChange) {
-      this.props.onLoadStatusChange({ loading: true });
+    if (this.props.onLoad) {
+      this.props.onLoad({ loading: true });
       const image = new Image();
       image.src = this.props.backgroundImageUrl;
       image.onload = () => {
-        this.props.onLoadStatusChange({ loading: false });
+        this.props.onLoad({ loading: false });
       };
     }
   }
-})(function ({onLoadStatusChange, backgroundImageUrl, ...rest}) {
+})(function ({onLoad, backgroundImageUrl, ...rest}) {
   return <Div {...rest}/>;
 });
 
-DivWithBgImage.defaultProps = {
+DivWithBgImage.propTypes = {
   backgroundImageUrl: PropTypes.string.isRequired,
-  onLoadStatusChange: PropTypes.func
+  onLoad: PropTypes.func
 };
 
 export default DivWithBgImage;
