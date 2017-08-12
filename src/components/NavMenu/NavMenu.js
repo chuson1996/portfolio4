@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, StyledLink } from './NavMenu.style';
+import { Container, StyledLink, StyledA } from './NavMenu.style';
 
 class NavMenu extends Component {
   render() {
@@ -9,6 +9,7 @@ class NavMenu extends Component {
         <StyledLink to={'/projects'}>Projects</StyledLink>
         <StyledLink to={'/aboutMe'}>About Me</StyledLink>
         <StyledLink to={'/tutorials'}>How I make this?</StyledLink>
+        <StyledA href={'https://standardresume.co/chuhoangson'}>Resume</StyledA>
       </Container>
     );
   }

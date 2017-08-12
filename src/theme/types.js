@@ -54,6 +54,7 @@ export const A = styled.a`
   text-decoration: none;
   position: relative;
   cursor: pointer;
+  ${({ color }) => color && css`color: ${color};`}
   &::after {
     content: '';
     position: absolute;

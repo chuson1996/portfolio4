@@ -166,6 +166,17 @@ class Menu extends Component {
                   </A>
                 </h1>
               </RevealUp>
+              <RevealUp show={menuOpen}>
+                <h1>
+                  <A
+                    color={'rgb(176, 230, 253)'}
+                    toColor={color3}
+                    href={'https://standardresume.co/chuhoangson'}
+                  >
+                    Resume
+                  </A>
+                </h1>
+              </RevealUp>
             </Div>
             <RevealUp show={menuOpen}>
               <Div>
