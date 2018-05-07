@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { withRouter } from 'react-router';
+// import { withRouter } from 'react-router';
 import styled from 'styled-components';
 import { Relative } from 'theme/grid';
 import { connect } from 'react-redux';
@@ -115,7 +115,7 @@ const Wrapper = styled(Relative)`
 
 class previousArrow extends Component {
   render() {
-    const { push, location: { pathname }, mouseOver, mouseLeave, hover, loadingProgress} = this.props;
+    const { push, location: { pathname }, mouseOver, mouseLeave, hover } = this.props;
     let text, onClick = () => {};
     switch (pathname) {
       // case '/applications/frodev':

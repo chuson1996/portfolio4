@@ -5,9 +5,10 @@ import { increment, nearlyComplete, complete, clear } from '../../redux/modules/
 import { Motion, spring } from 'react-motion';
 import { Container,
   Headline,
-  AbsoluteText,
-  AbsoluteDiv,
-  RelativeDiv } from './styles';
+  // AbsoluteText,
+  // AbsoluteDiv,
+  // RelativeDiv
+} from './styles';
 
 class LoadingPage extends PureComponent {
   static propTypes = {

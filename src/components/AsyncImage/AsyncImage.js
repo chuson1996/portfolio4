@@ -1,5 +1,6 @@
 import { registerItem, doneLoading, deregisterItem } from 'redux/modules/loadingStatus';
 import React, { Component } from 'react';
+import omit from 'lodash/omit';
 import { connect } from 'react-redux';
 
 export default connect(
@@ -19,9 +20,10 @@ export default connect(
   }
 
   render() {
-    const { doneLoading, registerItem, deregisterItem, src, ...rest } = this.props;
+    const { doneLoading, src } = this.props;
+    const rest = omit(this.props, ['doneLoading', 'registerItem', 'deregisterItem', 'src']);
     return (
-      <img onLoad={() => doneLoading(src)} src={src} {...rest}/>
+      <img onLoad={() => doneLoading(src)} src={src} {...rest} role="presentation"/>
     );
   }
 });

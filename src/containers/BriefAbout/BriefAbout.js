@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { Relative, Absolute, Container } from 'theme/grid';
 // import { BreakParagraph } from 'react-break-paragraph';
-import { RevealP, A } from 'theme/types';
+import { A } from 'theme/types';
 import { connect } from 'react-redux';
 import c from 'classnames';
 import WaypointShow from 'components/WaypointShow/WaypointShow';
 // import { color3, color2, color1, color4, color5 } from 'theme/variables';
 import ScrollIndicator from 'components/ScrollIndicator/ScrollIndicator';
-import { BackgroundDiv, Headline, SubHeadline, ImageContainer } from './BriefAbout.style';
+import { BackgroundDiv, Headline, SubHeadline } from './BriefAbout.style';
 // import transitionFinalize, { whenLeaving, whenAppearing, whenEntering } from 'helpers/transitionFinalize';
 import asyncImageEnhance from 'helpers/asyncImageEnhance';
-import { registerItem, doneLoading, deregisterItem } from 'redux/modules/loadingStatus';
-import AsyncImage from 'components/AsyncImage/AsyncImage';
+// import { registerItem, doneLoading, deregisterItem } from 'redux/modules/loadingStatus';
+// import AsyncImage from 'components/AsyncImage/AsyncImage';
+// import { RevealH1 } from '../../theme/types';
 
 const ProgressBackgroundDiv = (asyncImageEnhance('briefAboutBackground')(
   ({doneLoading}) =>
@@ -23,30 +24,6 @@ const ProgressBackgroundDiv = (asyncImageEnhance('briefAboutBackground')(
 ));
 
 class BriefAbout extends Component {
-  // componentWillReceiveProps(nextProps) {
-  //   whenLeaving(this.props, nextProps)(() => {
-  //     console.log('BriefAbout is leaving');
-  //   })
-
-  //   whenAppearing(this.props, nextProps)(() => {
-  //     console.log('Brief About is appearing');
-  //   })
-
-  //   whenEntering(this.props, nextProps)(() => {
-  //     console.log('Brief About is entering');
-  //   })
-  // }
-
-  // componentDidMount() {
-  //   this.props.registerItem('briefAboutBackground');
-  //   this.props.registerItem('briefAboutCodeeveryday');
-  // }
-
-  // componentWillUnmount() {
-  //   this.props.deregisterItem('briefAboutBackground');
-  //   this.props.deregisterItem('briefAboutCodeeveryday');
-  // }
-
   render() {
     return (
       <div>
@@ -81,33 +58,15 @@ class BriefAbout extends Component {
         </WaypointShow>
         <Container>
             <div>
-              <RevealP
-                fromLeftToRight>
-                <span>
-                  My dad used to call me "The monk who likes many things." Here's why: Whenever he asked me what I was passionate about, I always gave him different answers every single time. "I want to be a pianist," "I want to be a professional basketball player," "I want to be a DJ," I replied. I've never said, "I want to be a web developer." But some way, somehow, I grew my passion around web development before I even noticed it.
-                </span>
-              </RevealP>
-              <RevealP fromLeftToRight>
-                <span>
-                  To me, it's a super power to be able to create solutions in the form of a website. For example, I created an app that helps me pass my Finnish exam. Recently, I even created a bookmark manager for all my saved links because I couldn't find any other straightforward and easy ways. It's called <A target="_blank" href="http://codeeveryday.life">codeeveryday.life</A>
-                </span>
-              </RevealP>
-              <ImageContainer
-                fromLeftToRight
-              >
-                <span>
-                  <a target="_blank" href="http://codeeveryday.life">
-                    <AsyncImage
-                      width="100%"
-                      src={require('assets/codeeveryday.png')}
-                    />
-                  </a>
-                </span>
-              </ImageContainer>
-              <RevealP
-                fromLeftToRight>
-                <span>Click the arrow down on the bottom right corner to check out my open-source projects.</span>
-              </RevealP>
+              <h1>
+                <A href="#/projects">Projects</A>
+              </h1>
+              <h1>
+                <A href="#/aboutMe">About Me</A>
+              </h1>
+              <h1>
+                <A href="#/tutorials">How I Make This?</A>
+              </h1>
             </div>
         </Container>
       </div>

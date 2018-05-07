@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Motion, spring } from 'react-motion';
+// import { Motion, spring } from 'react-motion';
 import styled, { ThemeProvider, css } from 'styled-components';
 
 const Path = styled.path`

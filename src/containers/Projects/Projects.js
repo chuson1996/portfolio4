@@ -27,6 +27,7 @@ import ImageParallax from 'react-image-parallax2';
 // import BreakParagraph from 'components/BreakParagraph/BreakParagraph';
 // import Waypoint from 'react-waypoint';
 import WaypointShow from 'components/WaypointShow/WaypointShow';
+import DistortionImage from 'react-distortion-image';
 
 const IMG1_MOUSE_OVER = 'projects/IMG1_MOUSE_OVER';
 const IMG1_MOUSE_LEAVE = 'projects/IMG1_MOUSE_LEAVE';
@@ -48,13 +49,13 @@ const initialState = {
   isGroup3Shown: false,
 };
 
-const Basketball1Image = asyncImageEnhance('projects/basketball1')(
+const LaptopImage = asyncImageEnhance('projects/laptop')(
   ({doneLoading, ...rest}) =>
     <Img1
       onLoad={doneLoading}
       {...rest}
-      src={require('assets/basketball1.png')}
-      alt="basketball1"/>
+      src={require('assets/images/laptop-small.jpeg')}
+      alt="laptop"/>
 )
 
 const Basketball2Image = asyncImageEnhance('projects/basketball2')(
@@ -126,7 +127,7 @@ class Projects extends Component {
                     <InstallCode hide={!show}>npm install --save <A target="_blank" href="https://github.com/chuson1996/react-zoomy">react-zoomy</A></InstallCode>
                   </Relative>
                   <ReactZoomy
-                    imageUrl={require('assets/basketball1-big.jpg')}
+                    imageUrl={require('assets/images/laptop-big.jpg')}
                     renderThumbnail={({ showImage }) =>
                       <Flex justifyContent="center">
                         <Relative
@@ -146,7 +147,7 @@ class Projects extends Component {
                           <Motion style={{ scale: image1Hover ? spring(1.1) : spring(1) }}>
                             {({ scale }) =>
                               <Relative noOverflow>
-                                <Basketball1Image
+                                <LaptopImage
                                   style={{
                                     transform: `scale(${scale})`
                                   }}
@@ -187,7 +188,7 @@ class Projects extends Component {
                         Keep scrolling...
                       </VerticalGuideLine>
                       <Basketball2Image
-                        src={require('assets/basketball2.png')}
+                        src={require('assets/images/laptop-and-glasses-small.jpeg')}
                         reduceHeight={1/2}
                       />
                     </Relative>
@@ -201,7 +202,7 @@ class Projects extends Component {
                       </VerticalGuideLine>
                       {/*<StyledSketchyArrow/>*/}
                       <Img3>
-                        <Basketball3Image reduceHeight={1/3} src={require('assets/basketball3.png')}/>
+                        <Basketball3Image reduceHeight={1/3} src={require('assets/images/coding-screen.jpeg')}/>
                       </Img3>
                     </Relative>
                   </Flex>
@@ -293,7 +294,7 @@ class Projects extends Component {
                         Original
                       </VerticalGuideLine>
                       <Image8BitBefore
-                        src={require('assets/me.jpg')}
+                        src={require('assets/images/photo-edit-screen.jpeg')}
                         alt={'My Selfie'}
                       />
                     </Relative>
@@ -303,7 +304,7 @@ class Projects extends Component {
                       </VerticalGuideLine>
                       <Image8BitAfter
                         scaleFactor={4}
-                        src={require('assets/me.jpg')}
+                        src={require('assets/images/photo-edit-screen.jpeg')}
                       />
                     </Relative>
                   </Relative>
@@ -326,38 +327,33 @@ class Projects extends Component {
               }
             </WaypointShow>
 
-            {/*<WaypointShow bottomOffset={250}>
+            <WaypointShow bottomOffset={250}>
               {({ show }) =>
                 <Group>
-                  <Relative textRight noOverflow>
+                  <Relative textLeft noOverflow>
                     <OrderNumber hide={!show}>
                       <Div>0</Div>
-                      <Div>4</Div>
+                      <Div>5</Div>
                     </OrderNumber>
-                    <InstallCode right hide={!show}>npm install --save <A target="_blank" href="https://github.com/chuson1996/react-fold-image">react-fold-image</A></InstallCode>
+                    <InstallCode left hide={!show}>npm install --save <A target="_blank" href="https://github.com/chuson1996/react-distortion-image">react-distortion-image</A></InstallCode>
                   </Relative>
-                  <Relative block>
-                    <WaypointShow bottomOffset={400}>
-                      {({ show: show2 }) =>
-                        <ToggleState defaultState>
-                          {({ state, turnTrue, turnFalse }) =>
-                            <StyledFoldImage
-                              noCol={4}
-                              noRow={4}
-                              earlyRatio={0.3}
-                              startingPoint={3}
-                              startingDirection={'down'}
-                              hide={!show2}
-                              src={require('assets/TNW.jpg')}
-                              />
-                          }
-                        </ToggleState>
-                      }
-                    </WaypointShow>
+                  <Relative>
+                    <Relative inline>
+                      <VerticalGuideLine right>
+                        Hover over the image
+                      </VerticalGuideLine>
+                      <DistortionImage
+                        style={{ width: 600, height: 400 }}
+                        image1={require('assets/images/camera-laptop.jpeg')}
+                        image2={require('assets/images/bridge-screen.jpeg')}
+                        displacementImage={require('assets/images/3.jpg')}
+                      />
+                    </Relative>
                   </Relative>
                 </Group>
               }
-            </WaypointShow>*/}
+            </WaypointShow>
+
             <P textCenter>
               <A
                 target="_blank"
