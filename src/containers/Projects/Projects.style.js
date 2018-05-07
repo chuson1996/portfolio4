@@ -5,7 +5,7 @@ import _Square from 'components/Square/Square';
 import { color1, color2 } from 'theme/variables';
 import media from 'theme/media';
 import SketchyArrow from 'components/SketchyArrow/SketchyArrow';
-import GlitchImage from 'react-glitch';
+// import GlitchImage from 'react-glitch';
 import Image8Bit from 'react-8bit';
 import FoldImage from 'react-fold-image';
 
@@ -133,14 +133,14 @@ export const StyledSketchyArrow = styled(SketchyArrow)`
   z-index: -1;
 `;
 
-export const StyledGlitchImage = styled(GlitchImage)`
-  width: 400px;
-  cursor: pointer;
-  display: inline-block;
-  ${media.tablet`
-    width: 100%;
-  `}
-`;
+// export const StyledGlitchImage = styled(GlitchImage)`
+//   width: 400px;
+//   cursor: pointer;
+//   display: inline-block;
+//   ${media.tablet`
+//     width: 100%;
+//   `}
+// `;
 
 export const StyledImageBefore8Bit = styled.img`
   width: 300px;

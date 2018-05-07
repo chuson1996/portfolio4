@@ -14,7 +14,7 @@ const StyledSquareCursor = styled(SquareCursor)`
   position: fixed;
   z-index: 99;
   transform: translate(-50%, -50%);
-  pointerEvents: none;
+  pointer-events: none;
 
   ${media.tablet`
     display: none;
