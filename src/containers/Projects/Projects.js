@@ -200,7 +200,7 @@ class Projects extends Component {
                         }}>
                         See the parallax?
                       </VerticalGuideLine>
-                      {/*<StyledSketchyArrow/>*/}
+
                       <Img3>
                         <Basketball3Image reduceHeight={1/3} src={require('assets/images/coding-screen.jpeg')}/>
                       </Img3>
@@ -209,74 +209,6 @@ class Projects extends Component {
                 </Group>
               }
             </WaypointShow>
-
-            {/*<WaypointShow bottomOffset={250}>
-              {({ show }) =>
-                <Group>
-                  <Relative noOverflow>
-                    <OrderNumber hide={!show}>
-                      <Div>0</Div>
-                      <Div>3</Div>
-                    </OrderNumber>
-                    <InstallCode hide={!show}>npm install --save <A target="_blank" href="https://github.com/chuson1996/react-break-paragraph">react-break-paragraph</A></InstallCode>
-                  </Relative>
-                  <Flex justifyContent="flex-end">
-                    <MagicParagraph>
-                      <BreakParagraph
-                        paragraph="My 2 favourite tv series of all time are Breaking Bad and How I Met Your Mother. They are legen - wait for it - dary. Am I right? Anyway, see how these lines animate after one another? Because I used react-break-paragraph (plus some other magic tricks). :D"
-                        renderPlaceholder={(children) => <p>{children}</p>}
-                        renderLines={(lines) => <p>
-                          {lines.map((line, i) =>
-                            <span key={i} className="magicLine">{line + ' '}</span>
-                          )}
-                        </p>}/>
-                    </MagicParagraph>
-                  </Flex>
-                </Group>
-              }
-            </WaypointShow>*/}
-
-            {/*<WaypointShow bottomOffset={250}>
-              {({ show }) =>
-                <Group>
-                  <Relative textRight noOverflow>
-                    <OrderNumber hide={!show}>
-                      <Div>0</Div>
-                      <Div>4</Div>
-                    </OrderNumber>
-                    <InstallCode right hide={!show}>npm install --save <A target="_blank" href="https://github.com/chuson1996/react-glitch">react-glitch</A></InstallCode>
-                  </Relative>
-                  <ToggleState defaultState>
-                    {({ state, turnTrue, turnFalse }) =>
-                      <Relative block textCenter>
-                        <WaypointShow topOffset={200} bottomOffset={-100} defaultBehavior>
-                          {({ show: show2 }) =>
-                            <Relative inline>
-                              <VerticalGuideLine right>
-                                Click to { show && state ? 'stop' : 'start'} the glitch!
-                              </VerticalGuideLine>
-                              <StyledGlitchImage
-                                onClick={state ? turnFalse : turnTrue}
-                                src={require('assets/adidaphat.jpg')}
-                                alt="adidaphat"
-                                glitching={show && show2 && state}
-                                glitchOptions={{
-                                  seed: [0, 30, 60],
-                                  quality: 99,
-                                  amount: 0,
-                                  iterations: [1, 5, 10, 20]
-                                }}
-                                speed={[50, 200]}
-                              />
-                            </Relative>
-                          }
-                        </WaypointShow>
-                      </Relative>
-                    }
-                  </ToggleState>
-                </Group>
-              }
-            </WaypointShow>*/}
 
             <WaypointShow bottomOffset={250}>
               {({ show }) =>
@@ -343,7 +275,8 @@ class Projects extends Component {
                         Hover over the image
                       </VerticalGuideLine>
                       <DistortionImage
-                        style={{ width: 600, height: 400 }}
+                        style={{ width: 600, height: 400, maxWidth: 'calc(100vw - 80px)',
+                          maxHeight: 'calc(66vw - 80px)' }}
                         image1={require('assets/images/camera-laptop.jpeg')}
                         image2={require('assets/images/bridge-screen.jpeg')}
                         displacementImage={require('assets/images/3.jpg')}
